@@ -2,7 +2,7 @@ const CACHE_NAME = 'barun-math-v1';
 const SHELL_FILES = [
   './',
   './index.html',
-  './manifest.json',
+  './manifest',
   './icon-192.png',
   './icon-512.png'
 ];
