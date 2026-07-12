@@ -1,4 +1,4 @@
-const CACHE_NAME = 'barun-math-v1';
+const CACHE_NAME = 'barun-math-v2';
 const SHELL_FILES = [
   './',
   './index.html',
