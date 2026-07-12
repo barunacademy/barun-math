@@ -1,0 +1,20 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#15302B"/>
+      <stop offset="1" stop-color="#1C3B34"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1120" cy="60" r="220" fill="rgba(255,255,255,0.04)"/>
+
+  <g transform="translate(100,165) scale(0.5)">
+    <path d="M176 138 L176 393 L260 393" fill="none" stroke="#CBA05C" stroke-width="11" stroke-linecap="butt" stroke-linejoin="miter"/>
+    <path d="M200 393 H236 V414 L218 429 L200 414 Z" fill="#CBA05C"/>
+    <text x="188" y="392" font-family="Poppins" font-weight="800" font-size="330" fill="none" stroke="#CBA05C" stroke-width="10" stroke-linejoin="round">B</text>
+  </g>
+
+  <text x="400" y="290" font-family="Noto Serif CJK KR" font-weight="700" font-size="64" fill="#FFFFFF">바른학원</text>
+  <text x="400" y="360" font-family="Noto Serif CJK KR" font-weight="700" font-size="46" fill="#EFE6D4">수학 강의영상 자료실</text>
+  <text x="400" y="410" font-family="Noto Sans CJK KR" font-weight="500" font-size="26" fill="#C9D3CC">선생님이 직접 촬영한 강의 · 교재 페이지별 정리</text>
+</svg>
