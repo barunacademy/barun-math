@@ -479,11 +479,18 @@ document.getElementById('saveBtn').addEventListener('click', ()=>{
 
 loadVideos();
 
-// ---- PWA: 서비스워커 등록 (오프라인에서도 앱 화면이 열리도록) ----
-if('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')){
-  window.addEventListener('load', ()=>{
-    navigator.serviceWorker.register('./sw.js').catch(()=>{});
-  });
+// ---- 서비스워커/캐시를 완전히 제거 (영상 목록이 캐시 때문에 갱신 안 되는 문제 방지) ----
+// 예전에 등록된 서비스워커와 캐시가 있다면 자동으로 정리해서,
+// 학생들이 따로 캐시를 지우지 않아도 항상 최신 내용을 보게 합니다.
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.getRegistrations().then(regs=>{
+    regs.forEach(reg=>reg.unregister());
+  }).catch(()=>{});
+}
+if('caches' in window){
+  caches.keys().then(keys=>{
+    keys.forEach(key=>caches.delete(key));
+  }).catch(()=>{});
 }
 </script>
 </body>
