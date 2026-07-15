@@ -5,14 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="referrer" content="no-referrer-when-downgrade">
 <title>바른학원 수학 강의영상</title>
-
 <meta property="og:type" content="website">
 <meta property="og:title" content="바른학원 수학 강의영상 자료실">
 <meta property="og:description" content="선생님이 직접 촬영한 강의 · 교재 페이지별 정리. 눌러서 바로 시청하세요.">
 <meta property="og:image" content="https://barunacademy.github.io/barun-math/og-image.png">
 <meta property="og:url" content="https://barunacademy.github.io/barun-math/">
 <meta name="twitter:card" content="summary_large_image">
-
 <link rel="manifest" href="./manifest">
 <meta name="theme-color" content="#15302B">
 <link rel="icon" href="./icon-192.png">
@@ -21,203 +19,173 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="바른학원">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Poppins:wght@800&display=swap" rel="stylesheet">
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
 <style>
-  :root{
-    --bg:#F2F4EF;
-    --paper:#FFFFFF;
-    --ink:#1E2B26;
-    --ink-soft:#5C6B63;
-    --line:#DEE3D7;
-    --pine:#2F5D4E;
-    --pine-dark:#15302B;
-    --pine-soft:#E4EDE7;
-    --gold:#B8862F;
-    --gold-soft:#F3E8D6;
-    --shadow:0 10px 24px -12px rgba(21,48,43,.28);
-    --shadow-sm:0 4px 12px -6px rgba(21,48,43,.18);
-  }
-  *{box-sizing:border-box;}
-  html{height:100%;}
-  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Pretendard',system-ui,sans-serif;-webkit-tap-highlight-color:transparent;
-    min-height:100vh;min-height:100dvh;padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom);}
-  .wrap{max-width:480px;margin:0 auto;min-height:100vh;background:var(--bg);}
-
-  /* ---- Hero / brand banner ---- */
-  .hero{background:linear-gradient(165deg,var(--pine-dark),#1C3B34 70%);padding:22px 20px 26px;border-radius:0 0 26px 26px;position:relative;overflow:hidden;}
-  .hero::after{content:'';position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.04);}
-  .hero-emblem{position:absolute;right:-22px;bottom:-30px;width:190px;height:190px;opacity:.08;pointer-events:none;z-index:0;}
-  .hero-emblem svg{width:100%;height:100%;display:block;}
-  .brand{display:flex;align-items:center;gap:12px;cursor:default;user-select:none;position:relative;z-index:1;}
-  .brand-badge{width:42px;height:42px;flex:0 0 auto;display:flex;align-items:center;justify-content:center;}
-  .brand-badge svg{width:100%;height:100%;display:block;}
-  .brand-word{font-family:'Gowun Batang',serif;font-weight:700;font-size:22px;color:#fff;letter-spacing:.01em;}
-  .hero-title{font-family:'Gowun Batang',serif;font-weight:700;font-size:23px;color:#fff;margin:18px 0 0;line-height:1.4;position:relative;z-index:1;}
-  .hero-tag{display:inline-block;margin-top:10px;padding:5px 12px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);
-    border-radius:999px;font-size:11.5px;font-weight:700;color:#EFE6D4;letter-spacing:.02em;position:relative;z-index:1;}
-
-  /* ---- Guide card ---- */
-  .guide-card{margin:-14px 20px 4px;background:var(--paper);border-radius:16px;box-shadow:var(--shadow);padding:16px 16px 14px;position:relative;z-index:2;}
-  .guide-step{display:flex;align-items:flex-start;gap:11px;padding:7px 0;}
-  .guide-num{flex:0 0 auto;width:21px;height:21px;border-radius:50%;background:var(--pine-soft);color:var(--pine);font-size:11.5px;font-weight:900;
-    display:flex;align-items:center;justify-content:center;margin-top:1px;}
-  .guide-text{font-size:13px;line-height:1.55;color:var(--ink);}
-  .guide-text b{color:var(--pine);font-weight:700;}
-
-  /* ---- Tabs ---- */
-  .tabbar{display:flex;gap:8px;overflow-x:auto;padding:18px 20px 0;scrollbar-width:none;position:sticky;top:0;background:var(--bg);z-index:5;padding-bottom:12px;}
-  .tabbar::-webkit-scrollbar{display:none;}
-  .tab{flex:0 0 auto;padding:10px 20px;font-size:14px;font-weight:700;color:#fff;border:none;cursor:pointer;white-space:nowrap;
-    border-radius:12px;opacity:.42;transition:opacity .18s ease,transform .18s ease,box-shadow .18s ease;box-shadow:none;}
-  .tab.active{opacity:1;transform:translateY(-1px);box-shadow:var(--shadow-sm);}
-
-  .chiprow{display:flex;gap:8px;padding:2px 20px 4px;}
-  .chip{padding:7px 16px;border-radius:999px;font-size:13px;font-weight:600;border:1.5px solid var(--line);background:var(--paper);color:var(--ink-soft);cursor:pointer;transition:all .15s ease;}
-  .chip.active{border-color:var(--pine);background:var(--pine);color:#fff;font-weight:700;box-shadow:var(--shadow-sm);}
-
-  .admin-banner{margin:12px 20px 0;padding:9px 12px;background:var(--gold);color:#fff;font-size:12px;font-weight:700;border-radius:10px;text-align:center;
-    box-shadow:var(--shadow-sm);}
-
-  .list{padding:16px 20px 104px;display:flex;flex-direction:column;gap:18px;}
-
-  .book-group{background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow-sm);}
-  .book-header{padding:13px 16px;font-family:'Gowun Batang',serif;font-weight:700;font-size:14.5px;background:var(--pine-soft);color:var(--pine);
-    display:flex;align-items:center;justify-content:space-between;}
-  .book-count{font-family:'Pretendard',sans-serif;font-weight:600;font-size:11.5px;color:var(--pine);opacity:.72;}
-
-  .page-row{display:flex;align-items:center;gap:12px;padding:13px 16px;border-top:1px solid var(--line);cursor:pointer;position:relative;transition:background .12s ease;}
-  .page-row:active{background:var(--bg);}
-  .book-group .page-row:first-of-type{border-top:none;}
-  .page-badge{flex:0 0 auto;min-width:50px;text-align:center;padding:6px 8px;border-radius:9px;background:var(--gold-soft);
-    font-size:12.5px;font-weight:800;color:var(--gold);}
-  .page-unit{flex:1;font-size:13.5px;color:var(--ink);}
-  .page-play{flex:0 0 auto;font-size:12px;font-weight:700;color:var(--pine);}
-  .row-del{flex:0 0 auto;width:22px;height:22px;border-radius:50%;background:rgba(30,43,38,.5);color:#fff;border:none;font-size:12px;cursor:pointer;}
-
-  .empty{padding:60px 20px;text-align:center;color:var(--ink-soft);}
-  .empty-title{font-family:'Gowun Batang',serif;font-weight:700;font-size:17px;color:var(--ink);margin-bottom:6px;}
-  .empty-sub{font-size:13px;line-height:1.6;}
-  .loading{padding:60px 20px;text-align:center;color:var(--ink-soft);font-size:13px;}
-
-  .fab{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom));transform:translateX(-50%);background:var(--pine);color:#fff;border:none;padding:13px 22px;
-    border-radius:999px;font-size:14px;font-weight:700;box-shadow:0 8px 20px -4px rgba(21,48,43,.45);cursor:pointer;max-width:440px;width:calc(100% - 40px);z-index:20;}
-
-  .overlay{position:fixed;inset:0;background:rgba(20,28,24,.62);display:none;align-items:flex-end;justify-content:center;z-index:50;
-    backdrop-filter:blur(2px);}
-  .overlay.show{display:flex;animation:fadeIn .18s ease;}
-  @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
-  .sheet{background:var(--paper);width:100%;max-width:480px;border-radius:20px 20px 0 0;padding:18px 18px calc(26px + env(safe-area-inset-bottom));max-height:88vh;overflow-y:auto;position:relative;
-    animation:slideUp .22s cubic-bezier(.22,.68,.36,1);}
-  @keyframes slideUp{from{transform:translateY(24px);opacity:.4;}to{transform:translateY(0);opacity:1;}}
-  .sheet-title{font-family:'Gowun Batang',serif;font-weight:700;font-size:19px;margin:0 0 14px;}
-  .close-x{position:absolute;top:14px;right:16px;background:none;border:none;font-size:20px;color:var(--ink-soft);cursor:pointer;}
-
-  .player-wrap{position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:14px;overflow:hidden;margin-bottom:10px;box-shadow:var(--shadow-sm);}
-  .player-wrap iframe{width:100%;height:100%;border:none;}
-  .player-title{font-weight:700;font-size:15.5px;margin:0 0 2px;}
-  .player-meta{font-size:12.5px;color:var(--ink-soft);}
-  .watch-fallback{display:block;margin-top:10px;font-size:12.5px;font-weight:700;color:var(--pine);text-decoration:none;}
-  .watch-fallback:active{opacity:.7;}
-
-  label{display:block;font-size:12.5px;font-weight:700;color:var(--ink-soft);margin:14px 0 6px;}
-  label:first-of-type{margin-top:0;}
-  select,input[type=text]{width:100%;padding:11px 12px;border:1.5px solid var(--line);border-radius:11px;font-size:14px;font-family:inherit;background:var(--paper);color:var(--ink);}
-  select:focus,input[type=text]:focus{outline:none;border-color:var(--pine);}
-  .row2{display:flex;gap:10px;}
-  .row2>div{flex:1;}
-  .save-btn{margin-top:18px;width:100%;padding:13px;border:none;border-radius:11px;background:var(--pine);color:#fff;font-weight:700;font-size:14.5px;cursor:pointer;}
-  .save-btn:disabled{opacity:.5;}
+:root{
+--bg:#F2F4EF;
+--paper:#FFFFFF;
+--ink:#1E2B26;
+--ink-soft:#5C6B63;
+--line:#DEE3D7;
+--pine:#2F5D4E;
+--pine-dark:#15302B;
+--pine-soft:#E4EDE7;
+--gold:#B8862F;
+--gold-soft:#F3E8D6;
+--shadow:0 10px 24px -12px rgba(21,48,43,.28);
+--shadow-sm:0 4px 12px -6px rgba(21,48,43,.18);
+}
+*{box-sizing:border-box;}
+html{height:100%;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Pretendard',system-ui,sans-serif;-webkit-tap-highlight-color:transparent;
+min-height:100vh;min-height:100dvh;padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom);}
+.wrap{max-width:480px;margin:0 auto;min-height:100vh;background:var(--bg);}
+.hero{background:linear-gradient(165deg,var(--pine-dark),#1C3B34 70%);padding:22px 20px 26px;border-radius:0 0 26px 26px;position:relative;overflow:hidden;}
+.hero::after{content:'';position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.04);}
+.hero-emblem{position:absolute;right:-22px;bottom:-30px;width:190px;height:190px;opacity:.08;pointer-events:none;z-index:0;}
+.hero-emblem svg{width:100%;height:100%;display:block;}
+.brand{display:flex;align-items:center;gap:12px;cursor:default;user-select:none;position:relative;z-index:1;}
+.brand-badge{width:42px;height:42px;flex:0 0 auto;display:flex;align-items:center;justify-content:center;}
+.brand-badge svg{width:100%;height:100%;display:block;}
+.brand-word{font-family:'Gowun Batang',serif;font-weight:700;font-size:22px;color:#fff;letter-spacing:.01em;}
+.hero-title{font-family:'Gowun Batang',serif;font-weight:700;font-size:23px;color:#fff;margin:18px 0 0;line-height:1.4;position:relative;z-index:1;}
+.hero-tag{display:inline-block;margin-top:10px;padding:5px 12px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);
+border-radius:999px;font-size:11.5px;font-weight:700;color:#EFE6D4;letter-spacing:.02em;position:relative;z-index:1;}
+.guide-card{margin:-14px 20px 4px;background:var(--paper);border-radius:16px;box-shadow:var(--shadow);padding:16px 16px 14px;position:relative;z-index:2;}
+.guide-step{display:flex;align-items:flex-start;gap:11px;padding:7px 0;}
+.guide-num{flex:0 0 auto;width:21px;height:21px;border-radius:50%;background:var(--pine-soft);color:var(--pine);font-size:11.5px;font-weight:900;
+display:flex;align-items:center;justify-content:center;margin-top:1px;}
+.guide-text{font-size:13px;line-height:1.55;color:var(--ink);}
+.guide-text b{color:var(--pine);font-weight:700;}
+.tabbar{display:flex;gap:8px;overflow-x:auto;padding:18px 20px 0;scrollbar-width:none;position:sticky;top:0;background:var(--bg);z-index:5;padding-bottom:12px;}
+.tabbar::-webkit-scrollbar{display:none;}
+.tab{flex:0 0 auto;padding:10px 20px;font-size:14px;font-weight:700;color:#fff;border:none;cursor:pointer;white-space:nowrap;
+border-radius:12px;opacity:.42;transition:opacity .18s ease,transform .18s ease,box-shadow .18s ease;box-shadow:none;}
+.tab.active{opacity:1;transform:translateY(-1px);box-shadow:var(--shadow-sm);}
+.chiprow{display:flex;gap:8px;padding:2px 20px 4px;}
+.chip{padding:7px 16px;border-radius:999px;font-size:13px;font-weight:600;border:1.5px solid var(--line);background:var(--paper);color:var(--ink-soft);cursor:pointer;transition:all .15s ease;}
+.chip.active{border-color:var(--pine);background:var(--pine);color:#fff;font-weight:700;box-shadow:var(--shadow-sm);}
+.admin-banner{margin:12px 20px 0;padding:9px 12px;background:var(--gold);color:#fff;font-size:12px;font-weight:700;border-radius:10px;text-align:center;
+box-shadow:var(--shadow-sm);}
+.list{padding:16px 20px 104px;display:flex;flex-direction:column;gap:18px;}
+.book-group{background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow-sm);}
+.book-header{padding:13px 16px;font-family:'Gowun Batang',serif;font-weight:700;font-size:14.5px;background:var(--pine-soft);color:var(--pine);
+display:flex;align-items:center;justify-content:space-between;}
+.book-count{font-family:'Pretendard',sans-serif;font-weight:600;font-size:11.5px;color:var(--pine);opacity:.72;}
+.page-row{display:flex;align-items:center;gap:12px;padding:13px 16px;border-top:1px solid var(--line);cursor:pointer;position:relative;transition:background .12s ease;}
+.page-row:active{background:var(--bg);}
+.book-group .page-row:first-of-type{border-top:none;}
+.page-badge{flex:0 0 auto;min-width:50px;text-align:center;padding:6px 8px;border-radius:9px;background:var(--gold-soft);
+font-size:12.5px;font-weight:800;color:var(--gold);}
+.page-unit{flex:1;font-size:13.5px;color:var(--ink);}
+.page-play{flex:0 0 auto;font-size:12px;font-weight:700;color:var(--pine);}
+.row-del{flex:0 0 auto;width:22px;height:22px;border-radius:50%;background:rgba(30,43,38,.5);color:#fff;border:none;font-size:12px;cursor:pointer;}
+.empty{padding:60px 20px;text-align:center;color:var(--ink-soft);}
+.empty-title{font-family:'Gowun Batang',serif;font-weight:700;font-size:17px;color:var(--ink);margin-bottom:6px;}
+.empty-sub{font-size:13px;line-height:1.6;}
+.loading{padding:60px 20px;text-align:center;color:var(--ink-soft);font-size:13px;}
+.fab{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom));transform:translateX(-50%);background:var(--pine);color:#fff;border:none;padding:13px 22px;
+border-radius:999px;font-size:14px;font-weight:700;box-shadow:0 8px 20px -4px rgba(21,48,43,.45);cursor:pointer;max-width:440px;width:calc(100% - 40px);z-index:20;}
+.overlay{position:fixed;inset:0;background:rgba(20,28,24,.62);display:none;align-items:flex-end;justify-content:center;z-index:50;
+backdrop-filter:blur(2px);}
+.overlay.show{display:flex;animation:fadeIn .18s ease;}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+.sheet{background:var(--paper);width:100%;max-width:480px;border-radius:20px 20px 0 0;padding:18px 18px calc(26px + env(safe-area-inset-bottom));max-height:88vh;overflow-y:auto;position:relative;
+animation:slideUp .22s cubic-bezier(.22,.68,.36,1);}
+@keyframes slideUp{from{transform:translateY(24px);opacity:.4;}to{transform:translateY(0);opacity:1;}}
+.sheet-title{font-family:'Gowun Batang',serif;font-weight:700;font-size:19px;margin:0 0 14px;}
+.close-x{position:absolute;top:14px;right:16px;background:none;border:none;font-size:20px;color:var(--ink-soft);cursor:pointer;}
+.player-wrap{position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:14px;overflow:hidden;margin-bottom:10px;box-shadow:var(--shadow-sm);}
+.player-wrap iframe{width:100%;height:100%;border:none;}
+.player-title{font-weight:700;font-size:15.5px;margin:0 0 2px;}
+.player-meta{font-size:12.5px;color:var(--ink-soft);}
+.watch-fallback{display:block;margin-top:10px;font-size:12.5px;font-weight:700;color:var(--pine);text-decoration:none;}
+.watch-fallback:active{opacity:.7;}
+label{display:block;font-size:12.5px;font-weight:700;color:var(--ink-soft);margin:14px 0 6px;}
+label:first-of-type{margin-top:0;}
+select,input[type=text]{width:100%;padding:11px 12px;border:1.5px solid var(--line);border-radius:11px;font-size:14px;font-family:inherit;background:var(--paper);color:var(--ink);}
+select:focus,input[type=text]:focus{outline:none;border-color:var(--pine);}
+.row2{display:flex;gap:10px;}
+.row2>div{flex:1;}
+.save-btn{margin-top:18px;width:100%;padding:13px;border:none;border-radius:11px;background:var(--pine);color:#fff;font-weight:700;font-size:14.5px;cursor:pointer;}
+.save-btn:disabled{opacity:.5;}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="hero">
-    <div class="hero-emblem">
-      <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-        <path d="M176 138 L176 393 L260 393" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="butt" stroke-linejoin="miter"/>
-        <path d="M200 393 H236 V414 L218 429 L200 414 Z" fill="#FFFFFF"/>
-        <text x="188" y="392" font-family="Poppins" font-weight="800" font-size="330" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linejoin="round">B</text>
-      </svg>
-    </div>
-    <div class="brand" id="brandMark">
-      <div class="brand-badge">
-        <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-          <path d="M176 138 L176 393 L260 393" fill="none" stroke="#CBA05C" stroke-width="8" stroke-linecap="butt" stroke-linejoin="miter"/>
-          <path d="M200 393 H236 V414 L218 429 L200 414 Z" fill="#CBA05C"/>
-          <text x="188" y="392" font-family="Poppins" font-weight="800" font-size="330" fill="none" stroke="#CBA05C" stroke-width="7" stroke-linejoin="round">B</text>
-        </svg>
-      </div>
-      <div class="brand-word">바른학원</div>
-    </div>
-    <h1 class="hero-title">수학 강의영상<br>자료실</h1>
-    <span class="hero-tag">📹 선생님이 직접 촬영한 강의</span>
-  </div>
-
-  <div class="guide-card">
-    <div class="guide-step">
-      <span class="guide-num">1</span>
-      <p class="guide-text"><b>교재의 해당 페이지</b>를 펴고 설명을 잘 들어보세요.</p>
-    </div>
-    <div class="guide-step">
-      <span class="guide-num">2</span>
-      <p class="guide-text">설명을 들으며 <b>필기</b>도 함께 해보세요.</p>
-    </div>
-    <div class="guide-step">
-      <span class="guide-num">3</span>
-      <p class="guide-text">잘 이해가 안 되는 내용은 <b>수업 시간에 선생님께</b> 다시 질문하세요.</p>
-    </div>
-  </div>
-
-  <div id="adminBanner" class="admin-banner" style="display:none;">관리자 모드 · 영상 추가/삭제 가능</div>
-
-  <div class="tabbar" id="tabbar"></div>
-  <div class="chiprow" id="chiprow"></div>
-
-  <div id="listArea" class="list"><div class="loading">불러오는 중…</div></div>
+<div class="hero">
+<div class="hero-emblem">
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<path d="M176 138 L176 393 L260 393" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="butt" stroke-linejoin="miter"/>
+<path d="M200 393 H236 V414 L218 429 L200 414 Z" fill="#FFFFFF"/>
+<text x="188" y="392" font-family="Poppins" font-weight="800" font-size="330" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linejoin="round">B</text>
+</svg>
 </div>
-
+<div class="brand" id="brandMark">
+<div class="brand-badge">
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<path d="M176 138 L176 393 L260 393" fill="none" stroke="#CBA05C" stroke-width="8" stroke-linecap="butt" stroke-linejoin="miter"/>
+<path d="M200 393 H236 V414 L218 429 L200 414 Z" fill="#CBA05C"/>
+<text x="188" y="392" font-family="Poppins" font-weight="800" font-size="330" fill="none" stroke="#CBA05C" stroke-width="7" stroke-linejoin="round">B</text>
+</svg>
+</div>
+<div class="brand-word">바른학원</div>
+</div>
+<h1 class="hero-title">수학 강의영상<br>자료실</h1>
+<span class="hero-tag">📹 선생님이 직접 촬영한 강의</span>
+</div>
+<div class="guide-card">
+<div class="guide-step">
+<span class="guide-num">1</span>
+<p class="guide-text"><b>교재의 해당 페이지</b>를 펴고 설명을 잘 들어보세요.</p>
+</div>
+<div class="guide-step">
+<span class="guide-num">2</span>
+<p class="guide-text">설명을 들으며 <b>필기</b>도 함께 해보세요.</p>
+</div>
+<div class="guide-step">
+<span class="guide-num">3</span>
+<p class="guide-text">잘 이해가 안 되는 내용은 <b>수업 시간에 선생님께</b> 다시 질문하세요.</p>
+</div>
+</div>
+<div id="adminBanner" class="admin-banner" style="display:none;">관리자 모드 · 영상 추가/삭제 가능</div>
+<div class="tabbar" id="tabbar"></div>
+<div class="chiprow" id="chiprow"></div>
+<div id="listArea" class="list"><div class="loading">불러오는 중…</div></div>
+</div>
 <button class="fab" id="addFab" style="display:none;">+ 영상 추가</button>
-
 <div class="overlay" id="playerOverlay">
-  <div class="sheet">
-    <button class="close-x" id="closePlayer">✕</button>
-    <div class="player-wrap"><iframe id="playerFrame" src="" referrerpolicy="origin" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
-    <p class="player-title" id="playerTitle"></p>
-    <p class="player-meta" id="playerMeta"></p>
-    <a class="watch-fallback" id="watchFallback" href="#" target="_blank" rel="noopener">화면이 재생되지 않으면 여기를 눌러 유튜브에서 바로 보기 ▸</a>
-  </div>
+<div class="sheet">
+<button class="close-x" id="closePlayer">✕</button>
+<div class="player-wrap"><iframe id="playerFrame" src="" referrerpolicy="origin" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+<p class="player-title" id="playerTitle"></p>
+<p class="player-meta" id="playerMeta"></p>
+<a class="watch-fallback" id="watchFallback" href="#" target="_blank" rel="noopener">화면이 재생되지 않으면 여기를 눌러 유튜브에서 바로 보기 ▸</a>
 </div>
-
+</div>
 <div class="overlay" id="formOverlay">
-  <div class="sheet">
-    <button class="close-x" id="closeForm">✕</button>
-    <p class="sheet-title">영상 추가</p>
-
-    <div class="row2">
-      <div><label>학년</label><select id="f_grade"></select></div>
-      <div><label>학기</label><select id="f_semester"></select></div>
-    </div>
-
-    <label>교재명</label>
-    <input type="text" id="f_book" placeholder="예: 개념유형 개념편" list="bookSuggestions">
-    <datalist id="bookSuggestions"></datalist>
-
-    <div class="row2">
-      <div><label>페이지</label><input type="text" id="f_page" placeholder="예: 24"></div>
-      <div><label>단원</label><input type="text" id="f_unit" placeholder="예: 삼각함수"></div>
-    </div>
-
-    <label>유튜브 링크 또는 영상 ID</label>
-    <input type="text" id="f_youtube" placeholder="https://youtu.be/... 또는 영상ID">
-
-    <button class="save-btn" id="saveBtn">저장</button>
-  </div>
+<div class="sheet">
+<button class="close-x" id="closeForm">✕</button>
+<p class="sheet-title">영상 추가</p>
+<div class="row2">
+<div><label>학년</label><select id="f_grade"></select></div>
+<div><label>학기</label><select id="f_semester"></select></div>
 </div>
-
+<label>교재명</label>
+<input type="text" id="f_book" placeholder="예: 개념유형 개념편" list="bookSuggestions">
+<datalist id="bookSuggestions"></datalist>
+<div class="row2">
+<div><label>페이지</label><input type="text" id="f_page" placeholder="예: 24"></div>
+<div><label>단원</label><input type="text" id="f_unit" placeholder="예: 삼각함수"></div>
+</div>
+<label>유튜브 링크 또는 영상 ID</label>
+<input type="text" id="f_youtube" placeholder="https://youtu.be/... 또는 영상ID">
+<button class="save-btn" id="saveBtn">저장</button>
+</div>
+</div>
 <script>
 const GRADES = ['중2','중3','고1'];
 const GRADE_COLORS = { '중2':'#B8862F','중3':'#B0592F','고1':'#8A6BA8' };
@@ -226,271 +194,252 @@ const STORAGE_KEY = 'academy-math-videos';
 const VERSION_KEY = 'academy-math-videos-version';
 // 영상 목록(SEED_DATA)을 바꿀 때마다 이 숫자를 1씩 올려주세요.
 // 그래야 학생들 폰에 저장된 예전 목록 대신 최신 목록으로 자동 교체됩니다.
-const SEED_VERSION = 2;
-
+const SEED_VERSION = 3;
 const SEED_DATA = [
-  { grade:'중3', semester:'2', book:'개념유형 개념편', page:'8',  unit:'삼각비 개념', youtubeId:'3590TfnPy9Y' },
-  { grade:'중3', semester:'2', book:'개념유형 개념편', page:'10', unit:'삼각함수 개념', youtubeId:'6cJuveBVKR4' },
-  { grade:'중3', semester:'2', book:'개념유형 개념편', page:'13', unit:'삼각함수', youtubeId:'r_9T9iga1-w' },
-  { grade:'중3', semester:'2', book:'개념유형 개념편', page:'25', unit:'삼각비', youtubeId:'Ldx8aqpMvBE' },
-  { grade:'중3', semester:'2', book:'개념유형 개념편', page:'26', unit:'삼각함수 개념, 삼각형의 높이', youtubeId:'1s1xgJMqAx0' },
-  { grade:'중3', semester:'2', book:'개념유형 개념편', page:'29', unit:'삼각함수, 삼각형 넓이 구하기', youtubeId:'3RB0lIcUohk' },
-  { grade:'중3', semester:'2', book:'개념유형 개념편', page:'31', unit:'삼각함수 개념', youtubeId:'owNothKwPSE' },
-  { grade:'중3', semester:'2', book:'개념유형 개념편', page:'42', unit:'원', youtubeId:'6-CXJ8eR8Tg' },
-  { grade:'중3', semester:'2', book:'개념유형 개념편', page:'45', unit:'원', youtubeId:'jEWWHphNSQY' },
-  { grade:'중3', semester:'2', book:'개념유형 개념편', page:'60', unit:'원', youtubeId:'Tpqr64cZxFA' },
-  { grade:'중3', semester:'2', book:'개념유형 개념편', page:'65', unit:'원', youtubeId:'R4is0r-DxPA' },
-  { grade:'중3', semester:'2', book:'개념유형 개념편', page:'70', unit:'원', youtubeId:'F6jRoGydWnQ' },
-  { grade:'중3', semester:'2', book:'개념유형 개념편', page:'82', unit:'산포도', youtubeId:'Zg6-aJxCgL4' },
-  { grade:'중3', semester:'2', book:'개념유형 개념편', page:'85', unit:'산포도', youtubeId:'6V3XTqDaO1s' },
-  { grade:'중3', semester:'2', book:'개념유형 개념편', page:'96', unit:'산점도와 상관관계', youtubeId:'xYHzFAs3zWE' },
-  { grade:'중2', semester:'2', book:'체크체크 베이직', page:'4',  unit:'삼각형의 성질', youtubeId:'UAqYYEtWgdM' },
-  { grade:'중2', semester:'2', book:'체크체크 베이직', page:'6',  unit:'삼각형의 성질', youtubeId:'N4dLp0EHNb8' },
-  { grade:'중2', semester:'2', book:'체크체크 베이직', page:'11', unit:'삼각형의 성질', youtubeId:'7a5cHLGRjLU' },
-  { grade:'중2', semester:'2', book:'체크체크 베이직', page:'14', unit:'삼각형의 성질', youtubeId:'9Cu9HFoLW9Y' },
-  { grade:'고1', semester:'1', book:'공통수학1 개념플러스유형', page:'8',  unit:'다항식', youtubeId:'DAVn9MZF_bE' },
-  { grade:'고1', semester:'1', book:'공통수학1 개념플러스유형', page:'15', unit:'다항식', youtubeId:'XyzN9ua7-J0' },
-  { grade:'고1', semester:'1', book:'공통수학1 개념플러스유형', page:'20', unit:'다항식', youtubeId:'xDvYIQey5Js' },
-  { grade:'고1', semester:'1', book:'공통수학1 개념플러스유형', page:'36', unit:'다항식', youtubeId:'wY2E13BWUq4' },
-  { grade:'고1', semester:'2', book:'공통수학2 개념플러스유형', page:'8',  unit:'두 점 사이의 거리', youtubeId:'n44GsLZgAxE' },
-  { grade:'고1', semester:'2', book:'공통수학2 개념플러스유형', page:'18', unit:'선분의 내분점과 중점', youtubeId:'Yjn4FrlPmuY' },
-  { grade:'고1', semester:'2', book:'공통수학2 개념플러스유형', page:'30', unit:'직선의 방정식', youtubeId:'6OkgKObwX8s' },
-  { grade:'고1', semester:'2', book:'공통수학2 개념플러스유형', page:'36', unit:'두 직선의 평행과 수직', youtubeId:'UlXIaPSRL0g' },
-  { grade:'고1', semester:'2', book:'공통수학2 개념플러스유형', page:'44', unit:'점과 직선 사이의 거리', youtubeId:'IgwkCG5AAS8' },
-  { grade:'고1', semester:'2', book:'공통수학2 개념플러스유형', page:'52', unit:'원의 방정식', youtubeId:'BD4MnGOILuA' },
-  { grade:'고1', semester:'2', book:'공통수학2 개념플러스유형', page:'55', unit:'원의 방정식', youtubeId:'ukGHgQVMhcc' },
-  { grade:'고1', semester:'2', book:'공통수학2 개념플러스유형', page:'58', unit:'원의 방정식', youtubeId:'boHXq0K-9Ks' },
-  { grade:'고1', semester:'2', book:'공통수학2 개념플러스유형', page:'67', unit:'원과 직선의 위치관계', youtubeId:'RCBlxv_JrAk' }
+{ grade:'중3', semester:'2', book:'개념유형 개념편', page:'8', unit:'삼각비 개념', youtubeId:'3590TfnPy9Y' },
+{ grade:'중3', semester:'2', book:'개념유형 개념편', page:'10', unit:'삼각함수 개념', youtubeId:'6cJuveBVKR4' },
+{ grade:'중3', semester:'2', book:'개념유형 개념편', page:'13', unit:'삼각함수', youtubeId:'r_9T9iga1-w' },
+{ grade:'중3', semester:'2', book:'개념유형 개념편', page:'25', unit:'삼각비', youtubeId:'Ldx8aqpMvBE' },
+{ grade:'중3', semester:'2', book:'개념유형 개념편', page:'26', unit:'삼각함수 개념, 삼각형의 높이', youtubeId:'1s1xgJMqAx0' },
+{ grade:'중3', semester:'2', book:'개념유형 개념편', page:'29', unit:'삼각함수, 삼각형 넓이 구하기', youtubeId:'SISASkepsPE' },
+{ grade:'중3', semester:'2', book:'개념유형 개념편', page:'31', unit:'삼각함수 개념', youtubeId:'enJgKYUDxCI' },
+{ grade:'중3', semester:'2', book:'개념유형 개념편', page:'42', unit:'원', youtubeId:'6-CXJ8eR8Tg' },
+{ grade:'중3', semester:'2', book:'개념유형 개념편', page:'45', unit:'원', youtubeId:'jEWWHphNSQY' },
+{ grade:'중3', semester:'2', book:'개념유형 개념편', page:'60', unit:'원', youtubeId:'Tpqr64cZxFA' },
+{ grade:'중3', semester:'2', book:'개념유형 개념편', page:'65', unit:'원', youtubeId:'R4is0r-DxPA' },
+{ grade:'중3', semester:'2', book:'개념유형 개념편', page:'70', unit:'원', youtubeId:'F6jRoGydWnQ' },
+{ grade:'중3', semester:'2', book:'개념유형 개념편', page:'82', unit:'산포도', youtubeId:'Zg6-aJxCgL4' },
+{ grade:'중3', semester:'2', book:'개념유형 개념편', page:'85', unit:'산포도', youtubeId:'6V3XTqDaO1s' },
+{ grade:'중3', semester:'2', book:'개념유형 개념편', page:'96', unit:'산점도와 상관관계', youtubeId:'xYHzFAs3zWE' },
+{ grade:'중2', semester:'2', book:'체크체크 베이직', page:'4', unit:'삼각형의 성질', youtubeId:'UAqYYEtWgdM' },
+{ grade:'중2', semester:'2', book:'체크체크 베이직', page:'6', unit:'삼각형의 성질', youtubeId:'N4dLp0EHNb8' },
+{ grade:'중2', semester:'2', book:'체크체크 베이직', page:'11', unit:'삼각형의 성질', youtubeId:'7a5cHLGRjLU' },
+{ grade:'중2', semester:'2', book:'체크체크 베이직', page:'14', unit:'삼각형의 성질', youtubeId:'9Cu9HFoLW9Y' },
+{ grade:'중2', semester:'2', book:'체크체크 베이직', page:'18', unit:'삼각형의 외심', youtubeId:'KKUOHWORz1Q' },
+{ grade:'중2', semester:'2', book:'체크체크 베이직', page:'26', unit:'삼각형의 내심', youtubeId:'9vCc-rhU_hE' },
+{ grade:'중2', semester:'2', book:'체크체크 베이직', page:'28', unit:'삼각형의 내심', youtubeId:'gKokiI8s2R0' },
+{ grade:'중2', semester:'2', book:'체크체크 베이직', page:'38', unit:'평행사변형의 뜻과 성질', youtubeId:'fjsHQ6I1hn4' },
+{ grade:'중2', semester:'2', book:'체크체크 베이직', page:'44', unit:'평행사변형이 되는 조건', youtubeId:'S6vkyuPoAYM' },
+{ grade:'고1', semester:'1', book:'공통수학1 개념플러스유형', page:'8', unit:'다항식', youtubeId:'DAVn9MZF_bE' },
+{ grade:'고1', semester:'1', book:'공통수학1 개념플러스유형', page:'15', unit:'다항식', youtubeId:'XyzN9ua7-J0' },
+{ grade:'고1', semester:'1', book:'공통수학1 개념플러스유형', page:'20', unit:'다항식', youtubeId:'xDvYIQey5Js' },
+{ grade:'고1', semester:'1', book:'공통수학1 개념플러스유형', page:'36', unit:'다항식', youtubeId:'wY2E13BWUq4' },
+{ grade:'고1', semester:'2', book:'공통수학2 개념플러스유형', page:'8', unit:'두 점 사이의 거리', youtubeId:'n44GsLZgAxE' },
+{ grade:'고1', semester:'2', book:'공통수학2 개념플러스유형', page:'18', unit:'선분의 내분점과 중점', youtubeId:'Yjn4FrlPmuY' },
+{ grade:'고1', semester:'2', book:'공통수학2 개념플러스유형', page:'30', unit:'직선의 방정식', youtubeId:'6OkgKObwX8s' },
+{ grade:'고1', semester:'2', book:'공통수학2 개념플러스유형', page:'36', unit:'두 직선의 평행과 수직', youtubeId:'UlXIaPSRL0g' },
+{ grade:'고1', semester:'2', book:'공통수학2 개념플러스유형', page:'44', unit:'점과 직선 사이의 거리', youtubeId:'IgwkCG5AAS8' },
+{ grade:'고1', semester:'2', book:'공통수학2 개념플러스유형', page:'52', unit:'원의 방정식', youtubeId:'BD4MnGOILuA' },
+{ grade:'고1', semester:'2', book:'공통수학2 개념플러스유형', page:'55', unit:'원의 방정식', youtubeId:'ukGHgQVMhcc' },
+{ grade:'고1', semester:'2', book:'공통수학2 개념플러스유형', page:'58', unit:'원의 방정식', youtubeId:'boHXq0K-9Ks' },
+{ grade:'고1', semester:'2', book:'공통수학2 개념플러스유형', page:'67', unit:'원과 직선의 위치관계', youtubeId:'RCBlxv_JrAk' }
 ];
-
 let videos = [];
 let activeGrade = GRADES[0];
 let activeSemester = SEMESTERS[0];
 let isAdmin = false;
 let brandTaps = 0, brandTimer = null;
-
 function extractYoutubeId(input){
-  if(!input) return null;
-  input = input.trim();
-  let m = input.match(/(?:youtu\.be\/|v=|embed\/)([a-zA-Z0-9_-]{11})/);
-  if(m) return m[1];
-  if(/^[a-zA-Z0-9_-]{11}$/.test(input)) return input;
-  return null;
+if(!input) return null;
+input = input.trim();
+let m = input.match(/(?:youtu\.be\/|v=|embed\/)([a-zA-Z0-9_-]{11})/);
+if(m) return m[1];
+if(/^[a-zA-Z0-9_-]{11}$/.test(input)) return input;
+return null;
 }
 function escapeHtml(s){ const d=document.createElement('div'); d.textContent = s || ''; return d.innerHTML; }
-
 function buildTabs(){
-  const bar = document.getElementById('tabbar');
-  bar.innerHTML = '';
-  GRADES.forEach(g=>{
-    const b = document.createElement('button');
-    b.className = 'tab' + (g===activeGrade ? ' active' : '');
-    b.style.background = GRADE_COLORS[g];
-    b.textContent = g;
-    b.onclick = ()=>{ activeGrade = g; buildTabs(); renderList(); };
-    bar.appendChild(b);
-  });
+const bar = document.getElementById('tabbar');
+bar.innerHTML = '';
+GRADES.forEach(g=>{
+const b = document.createElement('button');
+b.className = 'tab' + (g===activeGrade ? ' active' : '');
+b.style.background = GRADE_COLORS[g];
+b.textContent = g;
+b.onclick = ()=>{ activeGrade = g; buildTabs(); renderList(); };
+bar.appendChild(b);
+});
 }
 function buildChips(){
-  const row = document.getElementById('chiprow');
-  row.innerHTML = '';
-  SEMESTERS.forEach(s=>{
-    const c = document.createElement('button');
-    c.className = 'chip' + (s===activeSemester ? ' active' : '');
-    c.textContent = s;
-    c.onclick = ()=>{ activeSemester = s; buildChips(); renderList(); };
-    row.appendChild(c);
-  });
+const row = document.getElementById('chiprow');
+row.innerHTML = '';
+SEMESTERS.forEach(s=>{
+const c = document.createElement('button');
+c.className = 'chip' + (s===activeSemester ? ' active' : '');
+c.textContent = s;
+c.onclick = ()=>{ activeSemester = s; buildChips(); renderList(); };
+row.appendChild(c);
+});
 }
-
 function pageSort(a,b){
-  const pa = parseFloat(a.page), pb = parseFloat(b.page);
-  if(!isNaN(pa) && !isNaN(pb)) return pa - pb;
-  return String(a.page).localeCompare(String(b.page));
+const pa = parseFloat(a.page), pb = parseFloat(b.page);
+if(!isNaN(pa) && !isNaN(pb)) return pa - pb;
+return String(a.page).localeCompare(String(b.page));
 }
-
 function renderList(){
-  const area = document.getElementById('listArea');
-  const semKey = activeSemester === '1학기' ? '1' : '2';
-  const filtered = videos.filter(v => v.grade===activeGrade && v.semester===semKey);
-
-  if(filtered.length === 0){
-    area.innerHTML = `<div class="empty">
-      <div class="empty-title">아직 등록된 영상이 없어요</div>
-      <div class="empty-sub">${activeGrade} · ${activeSemester} 영상이 준비되면 이곳에 표시됩니다.</div>
-    </div>`;
-    return;
-  }
-
-  const books = {};
-  filtered.forEach(v=>{
-    if(!books[v.book]) books[v.book] = [];
-    books[v.book].push(v);
-  });
-
-  area.innerHTML = '';
-  Object.keys(books).forEach(bookName=>{
-    const rows = books[bookName].sort(pageSort);
-    const group = document.createElement('div');
-    group.className = 'book-group';
-    group.innerHTML = `<div class="book-header"><span>${escapeHtml(bookName)}</span><span class="book-count">${rows.length}개 영상</span></div>`;
-    rows.forEach(v=>{
-      const row = document.createElement('div');
-      row.className = 'page-row';
-      row.innerHTML = `
-        <div class="page-badge">${escapeHtml(String(v.page))}p</div>
-        <div class="page-unit">${escapeHtml(v.unit)}</div>
-        <div class="page-play">▶ 보기</div>
-        ${isAdmin ? `<button class="row-del" data-id="${v.id}">✕</button>` : ''}
-      `;
-      row.addEventListener('click',(e)=>{
-        if(e.target.closest('.row-del')) return;
-        openPlayer(v, bookName);
-      });
-      group.appendChild(row);
-    });
-    area.appendChild(group);
-  });
-
-  if(isAdmin){
-    area.querySelectorAll('.row-del').forEach(btn=>{
-      btn.addEventListener('click',(e)=>{ e.stopPropagation(); deleteVideo(btn.dataset.id); });
-    });
-  }
+const area = document.getElementById('listArea');
+const semKey = activeSemester === '1학기' ? '1' : '2';
+const filtered = videos.filter(v => v.grade===activeGrade && v.semester===semKey);
+if(filtered.length === 0){
+area.innerHTML = `<div class="empty">
+<div class="empty-title">아직 등록된 영상이 없어요</div>
+<div class="empty-sub">${activeGrade} · ${activeSemester} 영상이 준비되면 이곳에 표시됩니다.</div>
+</div>`;
+return;
 }
-
+const books = {};
+filtered.forEach(v=>{
+if(!books[v.book]) books[v.book] = [];
+books[v.book].push(v);
+});
+area.innerHTML = '';
+Object.keys(books).forEach(bookName=>{
+const rows = books[bookName].sort(pageSort);
+const group = document.createElement('div');
+group.className = 'book-group';
+group.innerHTML = `<div class="book-header"><span>${escapeHtml(bookName)}</span><span class="book-count">${rows.length}개 영상</span></div>`;
+rows.forEach(v=>{
+const row = document.createElement('div');
+row.className = 'page-row';
+row.innerHTML = `
+<div class="page-badge">${escapeHtml(String(v.page))}p</div>
+<div class="page-unit">${escapeHtml(v.unit)}</div>
+<div class="page-play">▶ 보기</div>
+${isAdmin ? `<button class="row-del" data-id="${v.id}">✕</button>` : ''}
+`;
+row.addEventListener('click',(e)=>{
+if(e.target.closest('.row-del')) return;
+openPlayer(v, bookName);
+});
+group.appendChild(row);
+});
+area.appendChild(group);
+});
+if(isAdmin){
+area.querySelectorAll('.row-del').forEach(btn=>{
+btn.addEventListener('click',(e)=>{ e.stopPropagation(); deleteVideo(btn.dataset.id); });
+});
+}
+}
 function openPlayer(v, bookName){
-  document.getElementById('playerFrame').src = `https://www.youtube.com/embed/${v.youtubeId}?autoplay=1&rel=0`;
-  document.getElementById('playerTitle').textContent = `${v.page}페이지 · ${v.unit}`;
-  document.getElementById('playerMeta').textContent = `${v.grade} ${activeSemester} · ${bookName}`;
-  document.getElementById('watchFallback').href = `https://youtu.be/${v.youtubeId}`;
-  document.getElementById('playerOverlay').classList.add('show');
+document.getElementById('playerFrame').src = `https://www.youtube.com/embed/${v.youtubeId}?autoplay=1&rel=0`;
+document.getElementById('playerTitle').textContent = `${v.page}페이지 · ${v.unit}`;
+document.getElementById('playerMeta').textContent = `${v.grade} ${activeSemester} · ${bookName}`;
+document.getElementById('watchFallback').href = `https://youtu.be/${v.youtubeId}`;
+document.getElementById('playerOverlay').classList.add('show');
 }
 function closePlayerFn(){
-  document.getElementById('playerOverlay').classList.remove('show');
-  document.getElementById('playerFrame').src = '';
+document.getElementById('playerOverlay').classList.remove('show');
+document.getElementById('playerFrame').src = '';
 }
 document.getElementById('closePlayer').onclick = closePlayerFn;
 document.getElementById('playerOverlay').addEventListener('click',(e)=>{ if(e.target.id==='playerOverlay') closePlayerFn(); });
-
 // ---- 저장: localStorage 사용 (실제 브라우저/폰 앱에서 정상 동작, 기기별 로컬 저장) ----
 function loadVideos(){
-  try{
-    const storedVersion = localStorage.getItem(VERSION_KEY);
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if(raw && storedVersion === String(SEED_VERSION)){
-      videos = JSON.parse(raw);
-    }else{
-      videos = SEED_DATA.map(v => ({
-        ...v,
-        id: 'v_' + Date.now() + '_' + Math.random().toString(36).slice(2,7),
-        createdAt: Date.now()
-      }));
-      persistVideos();
-    }
-  }catch(err){
-    videos = SEED_DATA.map(v => ({
-      ...v,
-      id: 'v_' + Date.now() + '_' + Math.random().toString(36).slice(2,7),
-      createdAt: Date.now()
-    }));
-  }
-  activeGrade = '중3';
-  buildTabs(); buildChips(); renderList();
+try{
+const storedVersion = localStorage.getItem(VERSION_KEY);
+const raw = localStorage.getItem(STORAGE_KEY);
+if(raw && storedVersion === String(SEED_VERSION)){
+videos = JSON.parse(raw);
+}else{
+videos = SEED_DATA.map(v => ({
+...v,
+id: 'v_' + Date.now() + '_' + Math.random().toString(36).slice(2,7),
+createdAt: Date.now()
+}));
+persistVideos();
+}
+}catch(err){
+videos = SEED_DATA.map(v => ({
+...v,
+id: 'v_' + Date.now() + '_' + Math.random().toString(36).slice(2,7),
+createdAt: Date.now()
+}));
+}
+activeGrade = '중3';
+buildTabs(); buildChips(); renderList();
 }
 function persistVideos(){
-  try{
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(videos));
-    localStorage.setItem(VERSION_KEY, String(SEED_VERSION));
-  }
-  catch(err){ alert('저장 중 문제가 발생했어요. 다시 시도해주세요.'); }
+try{
+localStorage.setItem(STORAGE_KEY, JSON.stringify(videos));
+localStorage.setItem(VERSION_KEY, String(SEED_VERSION));
+}
+catch(err){ alert('저장 중 문제가 발생했어요. 다시 시도해주세요.'); }
 }
 function deleteVideo(id){
-  if(!confirm('이 영상을 삭제할까요?')) return;
-  videos = videos.filter(v=>v.id !== id);
-  persistVideos();
-  renderList();
+if(!confirm('이 영상을 삭제할까요?')) return;
+videos = videos.filter(v=>v.id !== id);
+persistVideos();
+renderList();
 }
-
 document.getElementById('brandMark').addEventListener('click', ()=>{
-  brandTaps++;
-  clearTimeout(brandTimer);
-  brandTimer = setTimeout(()=>{ brandTaps = 0; }, 3000);
-  if(brandTaps >= 7){
-    brandTaps = 0;
-    isAdmin = !isAdmin;
-    document.getElementById('adminBanner').style.display = isAdmin ? 'block' : 'none';
-    document.getElementById('addFab').style.display = isAdmin ? 'block' : 'none';
-    renderList();
-  }
+brandTaps++;
+clearTimeout(brandTimer);
+brandTimer = setTimeout(()=>{ brandTaps = 0; }, 3000);
+if(brandTaps >= 7){
+brandTaps = 0;
+isAdmin = !isAdmin;
+document.getElementById('adminBanner').style.display = isAdmin ? 'block' : 'none';
+document.getElementById('addFab').style.display = isAdmin ? 'block' : 'none';
+renderList();
+}
 });
-
 function fillFormOptions(){
-  const gSel = document.getElementById('f_grade');
-  const sSel = document.getElementById('f_semester');
-  gSel.innerHTML = GRADES.map(g=>`<option value="${g}">${g}</option>`).join('');
-  sSel.innerHTML = SEMESTERS.map(s=>`<option value="${s}">${s}</option>`).join('');
-  gSel.value = activeGrade;
-  sSel.value = activeSemester;
-
-  const bookNames = [...new Set(videos.map(v=>v.book))];
-  document.getElementById('bookSuggestions').innerHTML = bookNames.map(b=>`<option value="${escapeHtml(b)}">`).join('');
+const gSel = document.getElementById('f_grade');
+const sSel = document.getElementById('f_semester');
+gSel.innerHTML = GRADES.map(g=>`<option value="${g}">${g}</option>`).join('');
+sSel.innerHTML = SEMESTERS.map(s=>`<option value="${s}">${s}</option>`).join('');
+gSel.value = activeGrade;
+sSel.value = activeSemester;
+const bookNames = [...new Set(videos.map(v=>v.book))];
+document.getElementById('bookSuggestions').innerHTML = bookNames.map(b=>`<option value="${escapeHtml(b)}">`).join('');
 }
 document.getElementById('addFab').onclick = ()=>{
-  fillFormOptions();
-  document.getElementById('f_book').value = '';
-  document.getElementById('f_page').value = '';
-  document.getElementById('f_unit').value = '';
-  document.getElementById('f_youtube').value = '';
-  document.getElementById('formOverlay').classList.add('show');
+fillFormOptions();
+document.getElementById('f_book').value = '';
+document.getElementById('f_page').value = '';
+document.getElementById('f_unit').value = '';
+document.getElementById('f_youtube').value = '';
+document.getElementById('formOverlay').classList.add('show');
 };
 document.getElementById('closeForm').onclick = ()=>{ document.getElementById('formOverlay').classList.remove('show'); };
 document.getElementById('formOverlay').addEventListener('click',(e)=>{ if(e.target.id==='formOverlay') document.getElementById('formOverlay').classList.remove('show'); });
-
 document.getElementById('saveBtn').addEventListener('click', ()=>{
-  const grade = document.getElementById('f_grade').value;
-  const semester = document.getElementById('f_semester').value === '1학기' ? '1' : '2';
-  const book = document.getElementById('f_book').value.trim();
-  const page = document.getElementById('f_page').value.trim();
-  const unit = document.getElementById('f_unit').value.trim();
-  const ytRaw = document.getElementById('f_youtube').value.trim();
-  const youtubeId = extractYoutubeId(ytRaw);
-
-  if(!book){ alert('교재명을 입력해주세요.'); return; }
-  if(!page){ alert('페이지를 입력해주세요.'); return; }
-  if(!unit){ alert('단원을 입력해주세요.'); return; }
-  if(!youtubeId){ alert('유튜브 링크 또는 영상 ID를 올바르게 입력해주세요.'); return; }
-
-  const btn = document.getElementById('saveBtn');
-  btn.disabled = true; btn.textContent = '저장 중…';
-
-  videos.push({
-    id: 'v_' + Date.now() + '_' + Math.random().toString(36).slice(2,7),
-    grade, semester, book, page, unit, youtubeId,
-    createdAt: Date.now()
-  });
-  persistVideos();
-
-  btn.disabled = false; btn.textContent = '저장';
-  document.getElementById('formOverlay').classList.remove('show');
-  activeGrade = grade; activeSemester = semester === '1' ? '1학기' : '2학기';
-  buildTabs(); buildChips(); renderList();
+const grade = document.getElementById('f_grade').value;
+const semester = document.getElementById('f_semester').value === '1학기' ? '1' : '2';
+const book = document.getElementById('f_book').value.trim();
+const page = document.getElementById('f_page').value.trim();
+const unit = document.getElementById('f_unit').value.trim();
+const ytRaw = document.getElementById('f_youtube').value.trim();
+const youtubeId = extractYoutubeId(ytRaw);
+if(!book){ alert('교재명을 입력해주세요.'); return; }
+if(!page){ alert('페이지를 입력해주세요.'); return; }
+if(!unit){ alert('단원을 입력해주세요.'); return; }
+if(!youtubeId){ alert('유튜브 링크 또는 영상 ID를 올바르게 입력해주세요.'); return; }
+const btn = document.getElementById('saveBtn');
+btn.disabled = true; btn.textContent = '저장 중…';
+videos.push({
+id: 'v_' + Date.now() + '_' + Math.random().toString(36).slice(2,7),
+grade, semester, book, page, unit, youtubeId,
+createdAt: Date.now()
 });
-
+persistVideos();
+btn.disabled = false; btn.textContent = '저장';
+document.getElementById('formOverlay').classList.remove('show');
+activeGrade = grade; activeSemester = semester === '1' ? '1학기' : '2학기';
+buildTabs(); buildChips(); renderList();
+});
 loadVideos();
-
 // ---- 서비스워커/캐시를 완전히 제거 (영상 목록이 캐시 때문에 갱신 안 되는 문제 방지) ----
-// 예전에 등록된 서비스워커와 캐시가 있다면 자동으로 정리해서,
-// 학생들이 따로 캐시를 지우지 않아도 항상 최신 내용을 보게 합니다.
 if('serviceWorker' in navigator){
-  navigator.serviceWorker.getRegistrations().then(regs=>{
-    regs.forEach(reg=>reg.unregister());
-  }).catch(()=>{});
+navigator.serviceWorker.getRegistrations().then(regs=>{
+regs.forEach(reg=>reg.unregister());
+}).catch(()=>{});
 }
 if('caches' in window){
-  caches.keys().then(keys=>{
-    keys.forEach(key=>caches.delete(key));
-  }).catch(()=>{});
+caches.keys().then(keys=>{
+keys.forEach(key=>caches.delete(key));
+}).catch(()=>{});
 }
 </script>
 </body>
