@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<title>바른학원 수학 강의영상</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="바른학원 수학 강의영상 자료실">
+<meta property="og:description" content="선생님이 직접 촬영한 강의 · 교재 페이지별 정리. 눌러서 바로 시청하세요.">
+<meta property="og:image" content="https://barunacademy.github.io/barun-math/og-image.png">
+<meta property="og:url" content="https://barunacademy.github.io/barun-math/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="manifest" href="./manifest">
+<meta name="theme-color" content="#15302B">
+<link rel="icon" href="./icon-192.png">
+<link rel="apple-touch-icon" href="./ticon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="바른학원">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Poppins:wght@800&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+:root{
+--bg:#F2F4EF;--paper:#FFFFFF;--ink:#1E2B26;--ink-soft:#5C6B63;--line:#DEE3D7;
+--pine:#2F5D4E;--pine-dark:#15302B;--pine-soft:#E4EDE7;--gold:#B8862F;--gold-soft:#F3E8D6;
+--shadow:0 10px 24px -12px rgba(21,48,43,.28);--shadow-sm:0 4px 12px -6px rgba(21,48,43,.18);
+}
+*{box-sizing:border-box;}
+html{height:100%;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Pretendard',system-ui,sans-serif;-webkit-tap-highlight-color:transparent;
+min-height:100vh;min-height:100dvh;padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom);}
+.wrap{max-width:480px;margin:0 auto;min-height:100vh;background:var(--bg);}
+.hero{background:linear-gradient(165deg,var(--pine-dark),#1C3B34 70%);padding:22px 20px 26px;border-radius:0 0 26px 26px;position:relative;overflow:hidden;}
+.hero::after{content:'';position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.04);}
+.hero-emblem{position:absolute;right:-22px;bottom:-30px;width:190px;height:190px;opacity:.08;pointer-events:none;z-index:0;}
+.hero-emblem svg{width:100%;height:100%;display:block;}
+.brand{display:flex;align-items:center;gap:12px;cursor:default;user-select:none;position:relative;z-index:1;}
+.brand-badge{width:42px;height:42px;flex:0 0 auto;display:flex;align-items:center;justify-content:center;}
+.brand-badge svg{width:100%;height:100%;display:block;}
+.brand-word{font-family:'Gowun Batang',serif;font-weight:700;font-size:22px;color:#fff;letter-spacing:.01em;}
+.hero-title{font-family:'Gowun Batang',serif;font-weight:700;font-size:23px;color:#fff;margin:18px 0 0;line-height:1.4;position:relative;z-index:1;}
+.hero-tag{display:inline-block;margin-top:10px;padding:5px 12px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);
+border-radius:999px;font-size:11.5px;font-weight:700;color:#EFE6D4;letter-spacing:.02em;position:relative;z-index:1;}
+.guide-card{margin:-14px 20px 4px;background:var(--paper);border-radius:16px;box-shadow:var(--shadow);padding:16px 16px 14px;position:relative;z-index:2;}
+.guide-step{display:flex;align-items:flex-start;gap:11px;padding:7px 0;}
+.guide-num{flex:0 0 auto;width:21px;height:21px;border-radius:50%;background:var(--pine-soft);color:var(--pine);font-size:11.5px;font-weight:900;
+display:flex;align-items:center;justify-content:center;margin-top:1px;}
+.guide-text{font-size:13px;line-height:1.55;color:var(--ink);}
+.guide-text b{color:var(--pine);font-weight:700;}
+.tabbar{display:flex;gap:8px;overflow-x:auto;padding:18px 20px 0;scrollbar-width:none;position:sticky;top:0;background:var(--bg);z-index:5;padding-bottom:12px;}
+.tabbar::-webkit-scrollbar{display:none;}
+.tab{flex:0 0 auto;padding:10px 20px;font-size:14px;font-weight:700;color:#fff;border:none;cursor:pointer;white-space:nowrap;
+border-radius:12px;opacity:.42;transition:opacity .18s ease,transform .18s ease,box-shadow .18s ease;box-shadow:none;}
+.tab.active{opacity:1;transform:translateY(-1px);box-shadow:var(--shadow-sm);}
+.chiprow{display:flex;gap:8px;padding:2px 20px 4px;}
+.chip{padding:7px 16px;border-radius:999px;font-size:13px;font-weight:600;border:1.5px solid var(--line);background:var(--paper);color:var(--ink-soft);cursor:pointer;transition:all .15s ease;}
+.chip.active{border-color:var(--pine);background:var(--pine);color:#fff;font-weight:700;box-shadow:var(--shadow-sm);}
+.admin-banner{margin:12px 20px 0;padding:9px 12px;background:var(--gold);color:#fff;font-size:12px;font-weight:700;border-radius:10px;text-align:center;
+box-shadow:var(--shadow-sm);}
+.list{padding:16px 20px 104px;display:flex;flex-direction:column;gap:18px;}
+.book-group{background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow-sm);}
+.book-header{padding:13px 16px;font-family:'Gowun Batang',serif;font-weight:700;font-size:14.5px;background:var(--pine-soft);color:var(--pine);
+display:flex;align-items:center;justify-content:space-between;}
+.book-count{font-family:'Pretendard',sans-serif;font-weight:600;font-size:11.5px;color:var(--pine);opacity:.72;}
+.page-row{display:flex;align-items:center;gap:12px;padding:13px 16px;border-top:1px solid var(--line);cursor:pointer;position:relative;transition:background .12s ease;}
+.page-row:active{background:var(--bg);}
+.book-group .page-row:first-of-type{border-top:none;}
+.page-badge{flex:0 0 auto;min-width:50px;text-align:center;padding:6px 8px;border-radius:9px;background:var(--gold-soft);
+font-size:12.5px;font-weight:800;color:var(--gold);}
+.page-unit{flex:1;font-size:13.5px;color:var(--ink);}
+.page-play{flex:0 0 auto;font-size:12px;font-weight:700;color:var(--pine);}
+.row-del{flex:0 0 auto;width:22px;height:22px;border-radius:50%;background:rgba(30,43,38,.5);color:#fff;border:none;font-size:12px;cursor:pointer;}
+.empty{padding:60px 20px;text-align:center;color:var(--ink-soft);}
+.empty-title{font-family:'Gowun Batang',serif;font-weight:700;font-size:17px;color:var(--ink);margin-bottom:6px;}
+.empty-sub{font-size:13px;line-height:1.6;}
+.loading{padding:60px 20px;text-align:center;color:var(--ink-soft);font-size:13px;}
+.fab{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom));transform:translateX(-50%);background:var(--pine);color:#fff;border:none;padding:13px 22px;
+border-radius:999px;font-size:14px;font-weight:700;box-shadow:0 8px 20px -4px rgba(21,48,43,.45);cursor:pointer;max-width:440px;width:calc(100% - 40px);z-index:20;}
+.fab:disabled{opacity:.5;}
+.overlay{position:fixed;inset:0;background:rgba(20,28,24,.62);display:none;align-items:flex-end;justify-content:center;z-index:50;
+backdrop-filter:blur(2px);}
+.overlay.show{display:flex;animation:fadeIn .18s ease;}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+.sheet{background:var(--paper);width:100%;max-width:480px;border-radius:20px 20px 0 0;padding:18px 18px calc(26px + env(safe-area-inset-bottom));max-height:88vh;overflow-y:auto;position:relative;
+animation:slideUp .22s cubic-bezier(.22,.68,.36,1);}
+@keyframes slideUp{from{transform:translateY(24px);opacity:.4;}to{transform:translateY(0);opacity:1;}}
+.sheet-title{font-family:'Gowun Batang',serif;font-weight:700;font-size:19px;margin:0 0 14px;}
+.close-x{position:absolute;top:14px;right:16px;background:none;border:none;font-size:20px;color:var(--ink-soft);cursor:pointer;}
+.player-wrap{position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:14px;overflow:hidden;margin-bottom:10px;box-shadow:var(--shadow-sm);}
+.player-wrap iframe{width:100%;height:100%;border:none;}
+.player-title{font-weight:700;font-size:15.5px;margin:0 0 2px;}
+.player-meta{font-size:12.5px;color:var(--ink-soft);}
+.watch-fallback{display:block;margin-top:10px;font-size:12.5px;font-weight:700;color:var(--pine);text-decoration:none;}
+.watch-fallback:active{opacity:.7;}
+label{display:block;font-size:12.5px;font-weight:700;color:var(--ink-soft);margin:14px 0 6px;}
+label:first-of-type{margin-top:0;}
+select,input[type=text],input[type=password]{width:100%;padding:11px 12px;border:1.5px solid var(--line);border-radius:11px;font-size:14px;font-family:inherit;background:var(--paper);color:var(--ink);}
+select:focus,input[type=text]:focus,input[type=password]:focus{outline:none;border-color:var(--pine);}
+.row2{display:flex;gap:10px;}
+.row2>div{flex:1;}
+.save-btn{margin-top:18px;width:100%;padding:13px;border:none;border-radius:11px;background:var(--pine);color:#fff;font-weight:700;font-size:14.5px;cursor:pointer;}
+.save-btn:disabled{opacity:.5;}
+.hint{font-size:11.5px;color:var(--ink-soft);line-height:1.5;margin-top:6px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="hero">
+<div class="hero-emblem">
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<path d="M176 138 L176 393 L260 393" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="butt" stroke-linejoin="miter"/>
+<path d="M200 393 H236 V414 L218 429 L200 414 Z" fill="#FFFFFF"/>
+<text x="188" y="392" font-family="Poppins" font-weight="800" font-size="330" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linejoin="round">B</text>
+</svg>
+</div>
+<div class="brand" id="brandMark">
+<div class="brand-badge">
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<path d="M176 138 L176 393 L260 393" fill="none" stroke="#CBA05C" stroke-width="8" stroke-linecap="butt" stroke-linejoin="miter"/>
+<path d="M200 393 H236 V414 L218 429 L200 414 Z" fill="#CBA05C"/>
+<text x="188" y="392" font-family="Poppins" font-weight="800" font-size="330" fill="none" stroke="#CBA05C" stroke-width="7" stroke-linejoin="round">B</text>
+</svg>
+</div>
+<div class="brand-word">바른학원</div>
+</div>
+<h1 class="hero-title">수학 강의영상<br>자료실</h1>
+<span class="hero-tag">📹 선생님이 직접 촬영한 강의</span>
+</div>
+<div class="guide-card">
+<div class="guide-step"><span class="guide-num">1</span><p class="guide-text"><b>교재의 해당 페이지</b>를 펴고 설명을 잘 들어보세요.</p></div>
+<div class="guide-step"><span class="guide-num">2</span><p class="guide-text">설명을 들으며 <b>필기</b>도 함께 해보세요.</p></div>
+<div class="guide-step"><span class="guide-num">3</span><p class="guide-text">잘 이해가 안 되는 내용은 <b>수업 시간에 선생님께</b> 다시 질문하세요.</p></div>
+</div>
+<div id="adminBanner" class="admin-banner" style="display:none;">관리자 모드 · 영상 추가/삭제 가능 (전체 반영)</div>
+<div class="tabbar" id="tabbar"></div>
+<div class="chiprow" id="chiprow"></div>
+<div id="listArea" class="list"><div class="loading">불러오는 중…</div></div>
+</div>
+<button class="fab" id="addFab" style="display:none;">+ 영상 추가</button>
+
+<div class="overlay" id="playerOverlay">
+<div class="sheet">
+<button class="close-x" id="closePlayer">✕</button>
+<div class="player-wrap"><iframe id="playerFrame" src="" referrerpolicy="origin" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+<p class="player-title" id="playerTitle"></p>
+<p class="player-meta" id="playerMeta"></p>
+<a class="watch-fallback" id="watchFallback" href="#" target="_blank" rel="noopener">화면이 재생되지 않으면 여기를 눌러 유튜브에서 바로 보기 ▸</a>
+</div>
+</div>
+
+<div class="overlay" id="tokenOverlay">
+<div class="sheet">
+<button class="close-x" id="closeToken">✕</button>
+<p class="sheet-title">관리자 인증</p>
+<label>GitHub 토큰</label>
+<input type="text" id="f_token" placeholder="github_pat_로 시작하는 토큰 붙여넣기" autocomplete="off" spellcheck="false" style="font-family:monospace;">
+<p class="hint">이 토큰은 이 브라우저 탭에만 임시로 저장되며, 어떤 파일에도 기록되지 않습니다. 탭을 닫으면 사라져요.</p>
+<button class="save-btn" id="tokenSaveBtn">확인</button>
+</div>
+</div>
+
+<div class="overlay" id="formOverlay">
+<div class="sheet">
+<button class="close-x" id="closeForm">✕</button>
+<p class="sheet-title">영상 추가</p>
+<div class="row2">
+<div><label>학년</label><select id="f_grade"></select></div>
+<div><label>학기</label><select id="f_semester"></select></div>
+</div>
+<label>교재명</label>
+<input type="text" id="f_book" placeholder="예: 개념유형 개념편" list="bookSuggestions">
+<datalist id="bookSuggestions"></datalist>
+<div class="row2">
+<div><label>페이지</label><input type="text" id="f_page" placeholder="예: 24"></div>
+<div><label>단원</label><input type="text" id="f_unit" placeholder="예: 삼각함수"></div>
+</div>
+<label>유튜브 링크 또는 영상 ID</label>
+<input type="text" id="f_youtube" placeholder="https://youtu.be/... 또는 영상ID">
+<button class="save-btn" id="saveBtn">저장 (모든 기기에 즉시 반영)</button>
+</div>
+</div>
+
+<script>
+// ================== 설정 ==================
+const GH_OWNER = 'barunacademy';
+const GH_REPO  = 'barun-math';
+const GH_BRANCH = 'main';
+const GH_PATH  = 'data.json';
+const DATA_URL = './data.json'; // 같은 사이트 안의 파일이라 항상 최신 상태를 바로 읽음
+
+const GRADES = ['중2','중3','고1'];
+const GRADE_COLORS = { '중2':'#B8862F','중3':'#B0592F','고1':'#8A6BA8' };
+const SEMESTERS = ['1학기','2학기'];
+
+let videos = [];
+let activeGrade = '중3';
+let activeSemester = '2학기';
+let isAdmin = false;
+let brandTaps = 0, brandTimer = null;
+let ghToken = null; // 메모리에만 보관, 새로고침하면 사라짐
+let fileSha = null; // data.json의 현재 커밋 sha (덮어쓰기 충돌 방지용)
+
+function extractYoutubeId(input){
+  if(!input) return null;
+  input = input.trim();
+  let m = input.match(/(?:youtu\.be\/|v=|embed\/)([a-zA-Z0-9_-]{11})/);
+  if(m) return m[1];
+  if(/^[a-zA-Z0-9_-]{11}$/.test(input)) return input;
+  return null;
+}
+function escapeHtml(s){ const d=document.createElement('div'); d.textContent = s || ''; return d.innerHTML; }
+
+function buildTabs(){
+  const bar = document.getElementById('tabbar');
+  bar.innerHTML = '';
+  GRADES.forEach(g=>{
+    const b = document.createElement('button');
+    b.className = 'tab' + (g===activeGrade ? ' active' : '');
+    b.style.background = GRADE_COLORS[g];
+    b.textContent = g;
+    b.onclick = ()=>{ activeGrade = g; buildTabs(); renderList(); };
+    bar.appendChild(b);
+  });
+}
+function buildChips(){
+  const row = document.getElementById('chiprow');
+  row.innerHTML = '';
+  SEMESTERS.forEach(s=>{
+    const c = document.createElement('button');
+    c.className = 'chip' + (s===activeSemester ? ' active' : '');
+    c.textContent = s;
+    c.onclick = ()=>{ activeSemester = s; buildChips(); renderList(); };
+    row.appendChild(c);
+  });
+}
+function pageSort(a,b){
+  const pa = parseFloat(a.page), pb = parseFloat(b.page);
+  if(!isNaN(pa) && !isNaN(pb)) return pa - pb;
+  return String(a.page).localeCompare(String(b.page));
+}
+function renderList(){
+  const area = document.getElementById('listArea');
+  const semKey = activeSemester === '1학기' ? '1' : '2';
+  const filtered = videos.filter(v => v.grade===activeGrade && v.semester===semKey);
+  if(filtered.length === 0){
+    area.innerHTML = `<div class="empty"><div class="empty-title">아직 등록된 영상이 없어요</div><div class="empty-sub">${activeGrade} · ${activeSemester} 영상이 준비되면 이곳에 표시됩니다.</div></div>`;
+    return;
+  }
+  const books = {};
+  filtered.forEach(v=>{ if(!books[v.book]) books[v.book] = []; books[v.book].push(v); });
+  area.innerHTML = '';
+  Object.keys(books).forEach(bookName=>{
+    const rows = books[bookName].sort(pageSort);
+    const group = document.createElement('div');
+    group.className = 'book-group';
+    group.innerHTML = `<div class="book-header"><span>${escapeHtml(bookName)}</span><span class="book-count">${rows.length}개 영상</span></div>`;
+    rows.forEach(v=>{
+      const row = document.createElement('div');
+      row.className = 'page-row';
+      row.innerHTML = `
+        <div class="page-badge">${escapeHtml(String(v.page))}p</div>
+        <div class="page-unit">${escapeHtml(v.unit)}</div>
+        <div class="page-play">▶ 보기</div>
+        ${isAdmin ? `<button class="row-del" data-idx="${videos.indexOf(v)}">✕</button>` : ''}
+      `;
+      row.addEventListener('click',(e)=>{ if(e.target.closest('.row-del')) return; openPlayer(v, bookName); });
+      group.appendChild(row);
+    });
+    area.appendChild(group);
+  });
+  if(isAdmin){
+    area.querySelectorAll('.row-del').forEach(btn=>{
+      btn.addEventListener('click',(e)=>{ e.stopPropagation(); deleteVideo(parseInt(btn.dataset.idx,10)); });
+    });
+  }
+}
+function openPlayer(v, bookName){
+  document.getElementById('playerFrame').src = `https://www.youtube.com/embed/${v.youtubeId}?autoplay=1&rel=0`;
+  document.getElementById('playerTitle').textContent = `${v.page}페이지 · ${v.unit}`;
+  document.getElementById('playerMeta').textContent = `${v.grade} ${activeSemester} · ${bookName}`;
+  document.getElementById('watchFallback').href = `https://youtu.be/${v.youtubeId}`;
+  document.getElementById('playerOverlay').classList.add('show');
+}
+function closePlayerFn(){
+  document.getElementById('playerOverlay').classList.remove('show');
+  document.getElementById('playerFrame').src = '';
+}
+document.getElementById('closePlayer').onclick = closePlayerFn;
+document.getElementById('playerOverlay').addEventListener('click',(e)=>{ if(e.target.id==='playerOverlay') closePlayerFn(); });
+
+// ================== data.json 불러오기 (모든 기기 공통, 캐시 방지) ==================
+async function loadVideos(){
+  try{
+    const res = await fetch(DATA_URL + '?t=' + Date.now(), { cache:'no-store' });
+    videos = await res.json();
+  }catch(err){
+    document.getElementById('listArea').innerHTML = '<div class="empty"><div class="empty-title">불러오기 실패</div><div class="empty-sub">잠시 후 새로고침 해주세요.</div></div>';
+    return;
+  }
+  buildTabs(); buildChips(); renderList();
+}
+
+// ================== GitHub API로 저장 ==================
+async function ghGetFile(){
+  const res = await fetch(`https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${GH_PATH}?ref=${GH_BRANCH}`, {
+    headers:{ 'Authorization':`Bearer ${ghToken}`, 'Accept':'application/vnd.github+json' }
+  });
+  if(!res.ok) throw new Error('GitHub 파일 조회 실패 (' + res.status + ')');
+  const data = await res.json();
+  fileSha = data.sha;
+  return data;
+}
+async function ghSaveVideos(commitMessage){
+  await ghGetFile(); // 최신 sha 확보 (동시 수정 충돌 방지)
+  const content = JSON.stringify(videos, null, 2);
+  const b64 = btoa(unescape(encodeURIComponent(content)));
+  const res = await fetch(`https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${GH_PATH}`, {
+    method:'PUT',
+    headers:{ 'Authorization':`Bearer ${ghToken}`, 'Accept':'application/vnd.github+json', 'Content-Type':'application/json' },
+    body: JSON.stringify({ message: commitMessage, content: b64, sha: fileSha, branch: GH_BRANCH })
+  });
+  if(!res.ok){
+    const errBody = await res.text();
+    throw new Error('GitHub 저장 실패 (' + res.status + '): ' + errBody);
+  }
+  const result = await res.json();
+  fileSha = result.content.sha;
+}
+
+async function deleteVideo(idx){
+  if(!confirm('이 영상을 삭제할까요? (삭제 즉시 모든 기기에 반영됩니다)')) return;
+  const removed = videos[idx];
+  const backup = videos.slice();
+  videos.splice(idx,1);
+  renderList();
+  try{
+    await ghSaveVideos(`영상 삭제: ${removed.book} ${removed.page}p`);
+  }catch(err){
+    alert('삭제 반영 중 오류가 발생했어요.\n' + err.message);
+    videos = backup;
+    renderList();
+  }
+}
+
+// ================== 관리자 모드 진입 (7번 탭) ==================
+document.getElementById('brandMark').addEventListener('click', ()=>{
+  brandTaps++;
+  clearTimeout(brandTimer);
+  brandTimer = setTimeout(()=>{ brandTaps = 0; }, 3000);
+  if(brandTaps >= 7){
+    brandTaps = 0;
+    if(!isAdmin){
+      if(ghToken){ activateAdmin(); }
+      else{ document.getElementById('tokenOverlay').classList.add('show'); }
+    }else{
+      isAdmin = false;
+      document.getElementById('adminBanner').style.display = 'none';
+      document.getElementById('addFab').style.display = 'none';
+      renderList();
+    }
+  }
+});
+function activateAdmin(){
+  isAdmin = true;
+  document.getElementById('adminBanner').style.display = 'block';
+  document.getElementById('addFab').style.display = 'block';
+  renderList();
+}
+document.getElementById('closeToken').onclick = ()=>{ document.getElementById('tokenOverlay').classList.remove('show'); };
+document.getElementById('tokenOverlay').addEventListener('click',(e)=>{ if(e.target.id==='tokenOverlay') document.getElementById('tokenOverlay').classList.remove('show'); });
+document.getElementById('tokenSaveBtn').addEventListener('click', ()=>{
+  const t = document.getElementById('f_token').value.trim();
+  if(!t){ alert('토큰을 입력해주세요.'); return; }
+  ghToken = t;
+  document.getElementById('f_token').value = '';
+  document.getElementById('tokenOverlay').classList.remove('show');
+  activateAdmin();
+});
+
+// ================== 영상 추가 폼 ==================
+function fillFormOptions(){
+  const gSel = document.getElementById('f_grade');
+  const sSel = document.getElementById('f_semester');
+  gSel.innerHTML = GRADES.map(g=>`<option value="${g}">${g}</option>`).join('');
+  sSel.innerHTML = SEMESTERS.map(s=>`<option value="${s}">${s}</option>`).join('');
+  gSel.value = activeGrade;
+  sSel.value = activeSemester;
+  const bookNames = [...new Set(videos.map(v=>v.book))];
+  document.getElementById('bookSuggestions').innerHTML = bookNames.map(b=>`<option value="${escapeHtml(b)}">`).join('');
+}
+document.getElementById('addFab').onclick = ()=>{
+  fillFormOptions();
+  document.getElementById('f_book').value = '';
+  document.getElementById('f_page').value = '';
+  document.getElementById('f_unit').value = '';
+  document.getElementById('f_youtube').value = '';
+  document.getElementById('formOverlay').classList.add('show');
+};
+document.getElementById('closeForm').onclick = ()=>{ document.getElementById('formOverlay').classList.remove('show'); };
+document.getElementById('formOverlay').addEventListener('click',(e)=>{ if(e.target.id==='formOverlay') document.getElementById('formOverlay').classList.remove('show'); });
+
+document.getElementById('saveBtn').addEventListener('click', async ()=>{
+  const grade = document.getElementById('f_grade').value;
+  const semester = document.getElementById('f_semester').value === '1학기' ? '1' : '2';
+  const book = document.getElementById('f_book').value.trim();
+  const page = document.getElementById('f_page').value.trim();
+  const unit = document.getElementById('f_unit').value.trim();
+  const ytRaw = document.getElementById('f_youtube').value.trim();
+  const youtubeId = extractYoutubeId(ytRaw);
+  if(!book){ alert('교재명을 입력해주세요.'); return; }
+  if(!page){ alert('페이지를 입력해주세요.'); return; }
+  if(!unit){ alert('단원을 입력해주세요.'); return; }
+  if(!youtubeId){ alert('유튜브 링크 또는 영상 ID를 올바르게 입력해주세요.'); return; }
+
+  const btn = document.getElementById('saveBtn');
+  btn.disabled = true; btn.textContent = '저장 중… (모든 기기에 반영 중)';
+  const newVideo = { grade, semester, book, page, unit, youtubeId };
+  videos.push(newVideo);
+  try{
+    await ghSaveVideos(`영상 추가: ${book} ${page}p`);
+    document.getElementById('formOverlay').classList.remove('show');
+    activeGrade = grade; activeSemester = semester === '1' ? '1학기' : '2학기';
+    buildTabs(); buildChips(); renderList();
+  }catch(err){
+    videos.pop();
+    alert('저장 중 오류가 발생했어요. 토큰 권한(Contents: Read and write)을 확인해주세요.\n' + err.message);
+  }finally{
+    btn.disabled = false; btn.textContent = '저장 (모든 기기에 즉시 반영)';
+  }
+});
+
+loadVideos();
+</script>
+</body>
+</html>
