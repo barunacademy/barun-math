@@ -157,7 +157,7 @@ select:focus,input[type=text]:focus,input[type=password]:focus{outline:none;bord
 <button class="close-x" id="closeToken">✕</button>
 <p class="sheet-title">관리자 인증</p>
 <label>GitHub 토큰</label>
-<input type="password" id="f_token" placeholder="github_pat_로 시작하는 토큰 붙여넣기" autocomplete="off">
+<input type="text" id="f_token" placeholder="github_pat_로 시작하는 토큰 붙여넣기" autocomplete="off" spellcheck="false" style="font-family:monospace;">
 <p class="hint">이 토큰은 이 브라우저 탭에만 임시로 저장되며, 어떤 파일에도 기록되지 않습니다. 탭을 닫으면 사라져요.</p>
 <button class="save-btn" id="tokenSaveBtn">확인</button>
 </div>
@@ -207,7 +207,7 @@ let fileSha = null; // data.json의 현재 커밋 sha (덮어쓰기 충돌 방�
 function extractYoutubeId(input){
   if(!input) return null;
   input = input.trim();
-  let m = input.match(/(?:youtu\.be\/|v=|embed\/)([a-zA-Z0-9_-]{11})/);
+  let m = input.match(/(?:youtu\.be\/|v=|embed\/|shorts\/)([a-zA-Z0-9_-]{11})/);
   if(m) return m[1];
   if(/^[a-zA-Z0-9_-]{11}$/.test(input)) return input;
   return null;
