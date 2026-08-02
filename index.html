@@ -169,7 +169,7 @@ select:focus,input[type=text]:focus,input[type=password]:focus{outline:none;bord
 <p class="sheet-title">영상 추가</p>
 <div class="row2">
 <div><label>학년</label><select id="f_grade"></select></div>
-<div><label>학기</label><select id="f_semester"></select></div>
+<div><label id="f_semester_label">학기</label><select id="f_semester"></select></div>
 </div>
 <label>교재명</label>
 <input type="text" id="f_book" placeholder="예: 개념유형 개념편" list="bookSuggestions">
@@ -192,13 +192,16 @@ const GH_BRANCH = 'main';
 const GH_PATH  = 'data.json';
 const DATA_URL = './data.json'; // 같은 사이트 안의 파일이라 항상 최신 상태를 바로 읽음
 
-const GRADES = ['중2','중3','고1'];
-const GRADE_COLORS = { '중2':'#B8862F','중3':'#B0592F','고1':'#8A6BA8' };
+const GRADES = ['중1','중2','중3','고1','고2-3'];
+const GRADE_COLORS = { '중1':'#5E8C6A','중2':'#B8862F','중3':'#B0592F','고1':'#8A6BA8','고2-3':'#3F6E96' };
 const SEMESTERS = ['1학기','2학기'];
+const TRACKS = ['대수','미적분Ⅰ','확률과 통계','기하']; // 고2-3 전용 과정 분류 (학기와 별개)
+const TRACK_GRADES = ['고2-3']; // 학기 대신 과정으로 분류하는 학년 목록
 
 let videos = [];
 let activeGrade = '중3';
 let activeSemester = '2학기';
+let activeTrack = TRACKS[0];
 let isAdmin = false;
 let brandTaps = 0, brandTimer = null;
 let ghToken = null; // 메모리에만 보관, 새로고침하면 사라짐
@@ -222,20 +225,30 @@ function buildTabs(){
     b.className = 'tab' + (g===activeGrade ? ' active' : '');
     b.style.background = GRADE_COLORS[g];
     b.textContent = g;
-    b.onclick = ()=>{ activeGrade = g; buildTabs(); renderList(); };
+    b.onclick = ()=>{ activeGrade = g; buildTabs(); buildChips(); renderList(); };
     bar.appendChild(b);
   });
 }
 function buildChips(){
   const row = document.getElementById('chiprow');
   row.innerHTML = '';
-  SEMESTERS.forEach(s=>{
-    const c = document.createElement('button');
-    c.className = 'chip' + (s===activeSemester ? ' active' : '');
-    c.textContent = s;
-    c.onclick = ()=>{ activeSemester = s; buildChips(); renderList(); };
-    row.appendChild(c);
-  });
+  if(TRACK_GRADES.includes(activeGrade)){
+    TRACKS.forEach(t=>{
+      const c = document.createElement('button');
+      c.className = 'chip' + (t===activeTrack ? ' active' : '');
+      c.textContent = t;
+      c.onclick = ()=>{ activeTrack = t; buildChips(); renderList(); };
+      row.appendChild(c);
+    });
+  }else{
+    SEMESTERS.forEach(s=>{
+      const c = document.createElement('button');
+      c.className = 'chip' + (s===activeSemester ? ' active' : '');
+      c.textContent = s;
+      c.onclick = ()=>{ activeSemester = s; buildChips(); renderList(); };
+      row.appendChild(c);
+    });
+  }
 }
 function pageSort(a,b){
   const pa = parseFloat(a.page), pb = parseFloat(b.page);
@@ -244,10 +257,13 @@ function pageSort(a,b){
 }
 function renderList(){
   const area = document.getElementById('listArea');
-  const semKey = activeSemester === '1학기' ? '1' : '2';
-  const filtered = videos.filter(v => v.grade===activeGrade && v.semester===semKey);
+  const isTrackGrade = TRACK_GRADES.includes(activeGrade);
+  const filtered = isTrackGrade
+    ? videos.filter(v => v.grade===activeGrade && v.track===activeTrack)
+    : videos.filter(v => v.grade===activeGrade && v.semester===(activeSemester === '1학기' ? '1' : '2'));
+  const filterLabel = isTrackGrade ? activeTrack : activeSemester;
   if(filtered.length === 0){
-    area.innerHTML = `<div class="empty"><div class="empty-title">아직 등록된 영상이 없어요</div><div class="empty-sub">${activeGrade} · ${activeSemester} 영상이 준비되면 이곳에 표시됩니다.</div></div>`;
+    area.innerHTML = `<div class="empty"><div class="empty-title">아직 등록된 영상이 없어요</div><div class="empty-sub">${activeGrade} · ${filterLabel} 영상이 준비되면 이곳에 표시됩니다.</div></div>`;
     return;
   }
   const books = {};
@@ -382,13 +398,26 @@ document.getElementById('tokenSaveBtn').addEventListener('click', ()=>{
 });
 
 // ================== 영상 추가 폼 ==================
-function fillFormOptions(){
+function refreshSecondSelect(){
   const gSel = document.getElementById('f_grade');
   const sSel = document.getElementById('f_semester');
+  const label = document.getElementById('f_semester_label');
+  if(TRACK_GRADES.includes(gSel.value)){
+    label.textContent = '과정';
+    sSel.innerHTML = TRACKS.map(t=>`<option value="${t}">${t}</option>`).join('');
+    sSel.value = activeTrack;
+  }else{
+    label.textContent = '학기';
+    sSel.innerHTML = SEMESTERS.map(s=>`<option value="${s}">${s}</option>`).join('');
+    sSel.value = activeSemester;
+  }
+}
+function fillFormOptions(){
+  const gSel = document.getElementById('f_grade');
   gSel.innerHTML = GRADES.map(g=>`<option value="${g}">${g}</option>`).join('');
-  sSel.innerHTML = SEMESTERS.map(s=>`<option value="${s}">${s}</option>`).join('');
   gSel.value = activeGrade;
-  sSel.value = activeSemester;
+  gSel.onchange = refreshSecondSelect;
+  refreshSecondSelect();
   const bookNames = [...new Set(videos.map(v=>v.book))];
   document.getElementById('bookSuggestions').innerHTML = bookNames.map(b=>`<option value="${escapeHtml(b)}">`).join('');
 }
@@ -405,7 +434,10 @@ document.getElementById('formOverlay').addEventListener('click',(e)=>{ if(e.targ
 
 document.getElementById('saveBtn').addEventListener('click', async ()=>{
   const grade = document.getElementById('f_grade').value;
-  const semester = document.getElementById('f_semester').value === '1학기' ? '1' : '2';
+  const isTrackGrade = TRACK_GRADES.includes(grade);
+  const secondValue = document.getElementById('f_semester').value;
+  const semester = isTrackGrade ? '' : (secondValue === '1학기' ? '1' : '2');
+  const track = isTrackGrade ? secondValue : '';
   const book = document.getElementById('f_book').value.trim();
   const page = document.getElementById('f_page').value.trim();
   const unit = document.getElementById('f_unit').value.trim();
@@ -418,12 +450,13 @@ document.getElementById('saveBtn').addEventListener('click', async ()=>{
 
   const btn = document.getElementById('saveBtn');
   btn.disabled = true; btn.textContent = '저장 중… (모든 기기에 반영 중)';
-  const newVideo = { grade, semester, book, page, unit, youtubeId };
+  const newVideo = { grade, semester, track, book, page, unit, youtubeId };
   videos.push(newVideo);
   try{
     await ghSaveVideos(`영상 추가: ${book} ${page}p`);
     document.getElementById('formOverlay').classList.remove('show');
-    activeGrade = grade; activeSemester = semester === '1' ? '1학기' : '2학기';
+    activeGrade = grade;
+    if(isTrackGrade){ activeTrack = track; } else { activeSemester = semester === '1' ? '1학기' : '2학기'; }
     buildTabs(); buildChips(); renderList();
   }catch(err){
     videos.pop();
